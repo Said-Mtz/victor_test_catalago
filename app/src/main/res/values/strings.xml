@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">ExamenIntercam</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Fragment Login-->
+    <string name="txt_user">Usuario</string>
+    <string name="txt_password">Constraseña</string>
+    <string name="txt_empty_field">Campos vacíos</string>
+    <string name="txt_login">Login</string>
+
+    <!--Fragment Details-->
+    <string name="txt_yeast">Yeast:</string>
+    <string name="txt_abv">ABV</string>
+    <string name="txt_ibu">IBU</string>
+    <string name="txt_og">OG</string>
+    <string name="txt_fg">FG</string>
+    <string name="txt_bitter_experience">A Real Bitter Experience.</string>
+    <string name="txt_brewers_tips">Brewers Tips:</string>
+    <string name="txt_food_pairing">Food Pairing</string>
+    <string name="txt_hops">Hops:</string>
+    <string name="txt_malt">Malt:</string>
+
+    <!--DialogLogin-->
+    <string name="txt_dialog_login_title">Usuario y contraseña incorrectos intente de nuevo.</string>
+    <string name="txt_dialog_login_aceptar">Aceptar</string>
+
+</resources>
