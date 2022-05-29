@@ -1,9 +1,11 @@
 package com.example.examenintercam.ui.fragments.login
 
+import android.util.Patterns
 import androidx.navigation.fragment.findNavController
 import com.example.examenintercam.R
 import com.example.examenintercam.utils.dialog.AlertDialogLoginObject
 import com.google.android.material.textfield.TextInputLayout
+import java.util.regex.Pattern
 
 fun LoginFragment.initElements() {
     mBinding.apply {
@@ -15,7 +17,9 @@ fun LoginFragment.initElements() {
             val txtUser = edTxtUser.text.toString()
             val txtPassword = edTxtPassword.text.toString()
 
-            if(txtUser.isNotEmpty() && txtPassword.isNotEmpty()){
+            val validEmail = validEmail(txtUser)
+
+            if(txtUser.isNotEmpty() && validEmail && txtPassword.isNotEmpty()){
                 /**Alert Dialog user and password incorrect**/
                 /*val dialog = AlertDialogLoginObject
                 dialog.showDialog(requireActivity())*/
@@ -37,7 +41,7 @@ fun LoginFragment.validField(string: String, edTxt: TextInputLayout) {
     }
 }
 
-private fun LoginFragment.validFielFocusedUser() {
+/*private fun LoginFragment.validFielFocusedUser() {
     mBinding.edTxtUser.setOnFocusChangeListener { _, focused ->
         if (focused) {
             mBinding.inputLayoutEdTxtUser.helperText = null
@@ -87,4 +91,9 @@ private fun LoginFragment.validTxtPassword(): String? {
         return getString(R.string.txt_empty_field)
     }
     return null
+}*/
+
+private fun LoginFragment.validEmail(email: String): Boolean {
+    val pattern: Pattern = Patterns.EMAIL_ADDRESS
+    return pattern.matcher(email).matches()
 }
