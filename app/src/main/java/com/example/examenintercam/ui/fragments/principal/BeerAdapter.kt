@@ -2,14 +2,12 @@ package com.example.examenintercam.ui.fragments.principal
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.examenintercam.R
 import com.example.examenintercam.core.model.BeerRequestModelItem
 import com.example.examenintercam.databinding.ItemBeerBinding
-import com.example.examenintercam.utils.dialog.AlertDialogLoginObject
 import com.squareup.picasso.Picasso
 
 class BeerAdapter: ListAdapter<BeerRequestModelItem, BeerAdapter.BeerViewHolder>(DiffCallback) {
@@ -47,7 +45,7 @@ class BeerAdapter: ListAdapter<BeerRequestModelItem, BeerAdapter.BeerViewHolder>
                     txtTaglineBeer.text = tagline
                     imgFavorite.setOnClickListener {
                         imgFavorite.setColorFilter(R.color.purple_700)
-                        Toast.makeText(root.context, "sdfsdf", Toast.LENGTH_SHORT).show()
+                        //Toast.makeText(root.context, "sdfsdf", Toast.LENGTH_SHORT).show()
                     }
 
                     root.setOnClickListener {

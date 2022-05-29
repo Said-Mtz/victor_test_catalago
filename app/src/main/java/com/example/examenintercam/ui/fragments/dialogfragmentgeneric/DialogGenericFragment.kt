@@ -1,4 +1,4 @@
-package com.example.examenintercam.ui.fragments.detail
+package com.example.examenintercam.ui.fragments.dialogfragmentgeneric
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,7 +8,6 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.DialogFragment
-import com.example.examenintercam.R
 
 
 class DialogGenericFragment<T : ViewDataBinding> constructor(

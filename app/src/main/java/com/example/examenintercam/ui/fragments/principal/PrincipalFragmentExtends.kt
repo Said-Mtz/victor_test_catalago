@@ -1,10 +1,12 @@
 package com.example.examenintercam.ui.fragments.principal
 
 import android.view.View
+import androidx.navigation.fragment.findNavController
+import com.example.examenintercam.R
 import com.example.examenintercam.core.api.ApiBeerService
 import com.example.examenintercam.core.api.RetrofitService
 import com.example.examenintercam.core.model.BeerRequestModel
-import com.example.examenintercam.ui.fragments.dialogfragmentdetails.DialogFragmentDetails
+import com.example.examenintercam.ui.fragments.fragmentdetails.FragmentDetails
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -38,6 +40,10 @@ fun PrincipalFragment.initRecycler() {
         }
     })
     myAdapter.onItemClickListener = { itemList ->
+
+        findNavController().navigate(R.id.action_principalFragment_to_fragmentDetails)
+        //findNavController().navigate(R.id.action_principalFragment_to_favoritesFragment)
+
     /**Mostrando dialog fragment generico**/
     /*DialogGenericFragment<DialogDetailsBinding>(R.layout.dialog_details){ mBinding, dialogFragment ->
             mBinding.apply {
@@ -49,8 +55,8 @@ fun PrincipalFragment.initRecycler() {
         }.show(requireActivity().supportFragmentManager,"iodjiwedo")*/
 
         /**show my dialog fragment**/
-        val dialog = DialogFragmentDetails()
-        dialog.show(requireActivity().supportFragmentManager, "myDialogFragment")
+//        val dialog = FragmentDetails()
+//        dialog.show(requireActivity().supportFragmentManager, "myDialogFragment")
 
         //Toast.makeText(requireActivity(), "Press $itemList", Toast.LENGTH_SHORT).show()
     }

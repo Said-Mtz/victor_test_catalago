@@ -12,16 +12,28 @@
         android:layout_height="match_parent"
         tools:context=".ui.fragments.login.LoginFragment">
 
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:lottie_rawRes="@raw/lottie_login"
+            android:layout_marginTop="20dp"
+            android:layout_marginHorizontal="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/inputLayoutEdTxtUser"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/inputLayoutEdTxtUser"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-
             app:helperTextTextColor="@android:color/holo_red_dark"
             android:layout_marginHorizontal="20dp"
             android:layout_marginTop="20dp"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lottie"
             app:layout_constraintBottom_toTopOf="@id/inputLayoutEdTxtPassword"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
@@ -30,6 +42,8 @@
                 android:id="@+id/edTxtUser"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:maxLength="50"
+                android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:hint="@string/txt_user" />
 
@@ -40,7 +54,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-
             app:helperTextTextColor="@android:color/holo_red_dark"
             app:passwordToggleEnabled="true"
             android:layout_marginHorizontal="20dp"
@@ -55,6 +68,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
+                android:inputType="textPassword"
                 android:hint="@string/txt_password" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -71,4 +85,5 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </layout>

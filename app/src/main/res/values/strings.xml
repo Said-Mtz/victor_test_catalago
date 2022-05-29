@@ -30,4 +30,7 @@
     <string name="txt_dialog_log_out_body">Deseas salir de la aplicación</string>
     <string name="txt_dialog_log_out_calcel">Cancelar</string>
 
+    <!--itemFavorites-->
+    <string name="txt_reating_beer">Califica esta cerveza</string>
+
 </resources>
