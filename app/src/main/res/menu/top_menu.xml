@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!--<item
-        android:id="@+id/principalFragment"
-        android:title="Listado de cervezas"/>
     <item
-        android:id="@+id/"
-        android:title="Favoritos"/>-->
+        android:id="@+id/favoritesFragment"
+        android:title="Listado de cervezas"
+        android:icon="@drawable/ic_favorite"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/logOut"
+        android:title="Favoritos"
+        android:icon="@drawable/ic_log_out"
+        app:showAsAction="always"/>
 
 </menu>

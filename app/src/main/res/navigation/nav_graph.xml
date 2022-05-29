@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.examenintercam.ui.fragments.login.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_principalFragment"
             app:destination="@id/principalFragment" />
@@ -18,7 +18,26 @@
     <fragment
         android:id="@+id/principalFragment"
         android:name="com.example.examenintercam.ui.fragments.principal.PrincipalFragment"
-        android:label="fragment_principal"
-        tools:layout="@layout/fragment_principal" />
+        android:label="Home"
+        tools:layout="@layout/fragment_principal">
+        <action
+            android:id="@+id/action_principalFragment_to_fragmentDetails"
+            app:destination="@id/fragmentDetails" />
+        <action
+            android:id="@+id/action_principalFragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentDetails"
+        android:name="com.example.examenintercam.ui.fragments.fragmentdetails.FragmentDetails"
+        android:label="Detalles"
+        tools:layout="@layout/fragment_dialog_details" />
+
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.example.examenintercam.ui.fragments.favorites.FavoritesFragment"
+        android:label="Favoritos"
+        tools:layout="@layout/fragment_favorites" />
 
 </navigation>
