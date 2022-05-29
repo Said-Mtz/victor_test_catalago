@@ -14,9 +14,11 @@
             android:id="@+id/action_loginFragment_to_principalFragment"
             app:destination="@id/principalFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/principalFragment"
         android:name="com.example.examenintercam.ui.fragments.principal.PrincipalFragment"
         android:label="fragment_principal"
         tools:layout="@layout/fragment_principal" />
+
 </navigation>
