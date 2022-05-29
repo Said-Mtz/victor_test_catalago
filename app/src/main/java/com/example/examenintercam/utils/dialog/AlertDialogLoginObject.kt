@@ -12,6 +12,7 @@ object AlertDialogLoginObject {
         val dialog = MaterialAlertDialogBuilder(context, com.google.android.material.R.style.AlertDialog_AppCompat).setView(dialogView).show()
         val bindingDialog = AlertDialogLoginObjectBinding.bind(dialogView!!)
         bindingDialog.apply {
+            dialog.setCancelable(false)
            btnAccept.setOnClickListener {
                dialog.dismiss()
            }

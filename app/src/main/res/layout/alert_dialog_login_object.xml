@@ -7,12 +7,23 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        app:cardCornerRadius="4dp"
+        app:cardCornerRadius="8dp"
         android:elevation="8dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/icKey"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_padlockandkey"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/txtTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
             <TextView
                 android:id="@+id/txtTitle"
@@ -23,7 +34,7 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:gravity="center"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/icKey"
                 app:layout_constraintBottom_toTopOf="@id/btnAccept"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -32,7 +43,8 @@
                 android:id="@+id/btnAccept"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginBottom="8dp"
                 android:text="@string/txt_dialog_login_aceptar"
                 app:layout_constraintTop_toBottomOf="@id/txtTitle"
                 app:layout_constraintBottom_toBottomOf="parent"
