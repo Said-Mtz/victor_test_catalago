@@ -6,7 +6,7 @@
     <!--Fragment Login-->
     <string name="txt_user">Usuario</string>
     <string name="txt_password">Constraseña</string>
-    <string name="txt_empty_field">Campos vacíos</string>
+    <string name="txt_empty_field">Campo vacío</string>
     <string name="txt_login">Login</string>
 
     <!--Fragment Details-->
@@ -24,5 +24,10 @@
     <!--DialogLogin-->
     <string name="txt_dialog_login_title">Usuario y contraseña incorrectos intente de nuevo.</string>
     <string name="txt_dialog_login_aceptar">Aceptar</string>
+
+    <!--DialogLogOut-->
+    <string name="txt_dialog_log_out_title">Aviso</string>
+    <string name="txt_dialog_log_out_body">Deseas salir de la aplicación</string>
+    <string name="txt_dialog_log_out_calcel">Cancelar</string>
 
 </resources>
