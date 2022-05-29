@@ -8,6 +8,7 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.DialogFragment
+import com.example.examenintercam.R
 
 
 class DialogGenericFragment<T : ViewDataBinding> constructor(
@@ -16,6 +17,11 @@ class DialogGenericFragment<T : ViewDataBinding> constructor(
 ) : DialogFragment() {
 
     lateinit var binding: T
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setStyle(STYLE_NO_TITLE, com.google.android.material.R.style.Widget_MaterialComponents_MaterialCalendar_Fullscreen)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
