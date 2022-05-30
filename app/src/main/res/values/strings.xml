@@ -32,5 +32,6 @@
 
     <!--itemFavorites-->
     <string name="txt_reating_beer">Califica esta cerveza</string>
+    <string name="txt_reating_beer_save">Guardar</string>
 
 </resources>

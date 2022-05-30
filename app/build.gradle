@@ -1,6 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -53,6 +55,19 @@ dependencies {
 
     //Design Roundable
     implementation 'com.github.zladnrms:RoundableLayout:1.1.4'
+
+    //Air
+    implementation 'com.airbnb.android:lottie:5.0.3'
+
+    // Room
+    kapt 'androidx.room:room-ktx:2.4.2'
+    kapt "androidx.room:room-compiler:2.4.2"
+    implementation 'androidx.room:room-ktx:2.4.2'
+    implementation "androidx.room:room-runtime:2.4.2"
+    androidTestImplementation "androidx.room:room-testing:2.4.2"
+
+    //Corutinas
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2"
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
