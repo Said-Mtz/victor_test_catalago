@@ -2,6 +2,7 @@ package com.example.examenintercam.ui.fragments.favorites
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -47,6 +48,7 @@ class FavoritesAdapter :
                         if (::onItemClickListener.isInitialized) {
                             onItemClickListener(this, ratingBar.rating)
                         }
+                        Toast.makeText(root.context,"Guardado", Toast.LENGTH_SHORT).show()
                     }
                 }
             }

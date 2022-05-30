@@ -36,25 +36,8 @@ fun HomeFragment.initRecycler() {
     }
 
     beerAdapter.onItemClickListener = { itemList ->
-
         viewModel.setSelectedModel(itemList)
         findNavController().navigate(R.id.action_principalFragment_to_fragmentDetails)
-        //findNavController().navigate(R.id.action_principalFragment_to_favoritesFragment)
-
-        /**Mostrando dialog fragment generico**/
-        /*DialogGenericFragment<DialogDetailsBinding>(R.layout.dialog_details){ mBinding, dialogFragment ->
-                mBinding.apply {
-                    imgBeer.setOnClickListener {
-                        dialogFragment.dismissAllowingStateLoss()
-                    }
-
-                }
-            }.show(requireActivity().supportFragmentManager,"iodjiwedo")*/
-
-        /**show my dialog fragment**/
-//        val dialog = FragmentDetails()
-//        dialog.show(requireActivity().supportFragmentManager, "myDialogFragment")
-        //Toast.makeText(requireActivity(), "Press $itemList", Toast.LENGTH_SHORT).show()
     }
 
 }

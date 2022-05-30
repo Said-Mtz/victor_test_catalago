@@ -70,7 +70,8 @@ class MainActivity : AppCompatActivity() {
                 finish()
                 return@showDialog
             }
-        } else if (item.itemId == R.id.favoritesFragment && navController.currentDestination?.id == R.id.principalFragment) {
+        } else if (item.itemId == R.id.favoritesFragment && navController.currentDestination?.id == R.id.principalFragment
+            || navController.currentDestination?.id == R.id.fragmentDetails) {
             navController.navigate(R.id.favoritesFragment)
             return false
         }
@@ -85,6 +86,10 @@ class MainActivity : AppCompatActivity() {
             R.id.favoritesFragment -> {
                 navController.navigate(R.id.principalFragment)
                 false
+            }
+            R.id.principalFragment -> {
+
+                true
             }
             else -> {
                 super.onSupportNavigateUp()
