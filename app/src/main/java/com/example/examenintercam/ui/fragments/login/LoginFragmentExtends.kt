@@ -14,18 +14,15 @@ fun LoginFragment.initElements() {
         validFielFocusedPassword()*/
 
         btnLogin.setOnClickListener {
-            val txtUser = edTxtUser.text.toString()
-            val txtPassword = edTxtPassword.text.toString()
+            val txtUser = edTxtUser.text.toString().trim().trimIndent()
+            val txtPassword = edTxtPassword.text.toString().trim().trimIndent()
 
             val validEmail = validEmail(txtUser)
 
             if(txtUser.isNotEmpty() && validEmail && txtPassword.isNotEmpty()){
-                /**Alert Dialog user and password incorrect**/
-                /*val dialog = AlertDialogLoginObject
-                dialog.showDialog(requireActivity())*/
-
+                viewModel.requestUser(txtUser,txtPassword)
                 /**Navegar a lista de cerveza**/
-                findNavController().navigate(R.id.action_loginFragment_to_principalFragment)
+
             }else{
                 validField(txtUser, inputLayoutEdTxtUser)
                 validField(txtPassword, inputLayoutEdTxtPassword)
