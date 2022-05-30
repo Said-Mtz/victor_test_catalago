@@ -45,7 +45,6 @@
                 android:maxLength="50"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
-                android:text="victorknd4@gmail.com"
                 android:hint="@string/txt_user" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -69,7 +68,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
-                android:text="1234"
                 android:inputType="textPassword"
                 android:hint="@string/txt_password" />
 
