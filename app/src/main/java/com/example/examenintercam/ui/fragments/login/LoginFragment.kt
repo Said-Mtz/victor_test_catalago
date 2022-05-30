@@ -58,6 +58,7 @@ class LoginFragment : Fragment() {
                         "NO EXISTE".log("Login")
                         val dialog = AlertDialogLoginObject
                         dialog.showDialog(requireActivity())
+                        viewModel.resetStatusLogin()
                     } else {
                         "Algo salio mal".log("Login")
                     }

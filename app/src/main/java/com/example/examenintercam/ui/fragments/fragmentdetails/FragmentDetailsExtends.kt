@@ -9,7 +9,7 @@ fun FragmentDetails.initElements() {
             txtLiters.text = "${volume.value} Lts"
 
             txtAbvValue.text = "$abv %"
-            txtIbuValue.text = "${ibu.toInt()}"
+            txtIbuValue.text = "${ibu?.toInt()}"
             txtOgValue.text = "${target_og.toInt()}"
             txtFgValue.text = "$target_fg"
 

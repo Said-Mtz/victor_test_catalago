@@ -147,7 +147,7 @@ class Repository {
                     BeerEntity(
                         id = beerItem.id,
                         name = beerItem.name,
-                        image_url = beerItem.image_url,
+                        image_url = beerItem.image_url ?: "",
                         tagline = beerItem.tagline,
                         rating = 0.0,
                         isFavorite = true
@@ -166,11 +166,11 @@ class Repository {
     fun executeSaveUser(listUser: List<UserEntity>, execute: () -> Unit) {
         coroutineScope.launch(Dispatchers.IO) {
             listUser.forEach {
+                val passwordEncrypted = encript(it.password)
                 dataBase.userDao.insert(
-                    it.run {
-                        password = encript(password)
-                        this
-                    }
+                    UserEntity(
+                        email = it.email, password = passwordEncrypted
+                    )
                 )
             }
             execute()
