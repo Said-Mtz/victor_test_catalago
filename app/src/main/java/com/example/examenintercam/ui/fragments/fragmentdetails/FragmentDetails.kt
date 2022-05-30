@@ -5,12 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.example.examenintercam.databinding.FragmentDialogDetailsBinding
+import com.example.examenintercam.viewmodel.MainViewModel
 
 class FragmentDetails : Fragment() {
 
     private var _binding: FragmentDialogDetailsBinding? = null
     val mBinding get() = _binding!!
+
+    val viewModel by activityViewModels<MainViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,

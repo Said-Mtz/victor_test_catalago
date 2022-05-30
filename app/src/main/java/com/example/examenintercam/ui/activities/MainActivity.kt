@@ -12,6 +12,7 @@ import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.examenintercam.R
 import com.example.examenintercam.databinding.ActivityMainBinding
+import com.example.examenintercam.utils.dialog.AlertDialogLogOut
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,9 +37,21 @@ class MainActivity : AppCompatActivity() {
 
             //Toolbar
             setSupportActionBar(toolbar)
+
+            supportActionBar?.setDisplayHomeAsUpEnabled(false)
+            supportActionBar?.setHomeButtonEnabled(false)
             setupActionBarWithNavController(navController, appBarConfiguration)
+        }
 
-
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            when (destination.id) {
+                R.id.loginFragment -> {
+                    (this as AppCompatActivity?)!!.supportActionBar!!.hide()
+                }
+                else -> {
+                    (this as AppCompatActivity?)!!.supportActionBar!!.show()
+                }
+            }
         }
     }
 
@@ -47,11 +60,35 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
+    override fun onBackPressed() {
+
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.logOut) {
+            AlertDialogLogOut.showDialog(this) {
+                finish()
+                return@showDialog
+            }
+        } else if (item.itemId == R.id.favoritesFragment && navController.currentDestination?.id == R.id.principalFragment) {
+            navController.navigate(R.id.favoritesFragment)
+            return false
+        }
         return item.onNavDestinationSelected(navController) || super.onOptionsItemSelected(item)
     }
 
     override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+        return when (navController.currentDestination?.id) {
+            R.id.fragmentDetails -> {
+                navController.navigateUp(appBarConfiguration)
+            }
+            R.id.favoritesFragment -> {
+                navController.navigate(R.id.principalFragment)
+                false
+            }
+            else -> {
+                super.onSupportNavigateUp()
+            }
+        }
     }
 }
