@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitService {
     fun instance(): Retrofit = Retrofit.Builder()
-        .baseUrl("https://api.punkapi.com/v2/")
+        .baseUrl("https://api.punkapi.com/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 }
