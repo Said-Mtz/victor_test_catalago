@@ -10,7 +10,7 @@ import com.example.examenintercam.databinding.ItemFavoriteBinding
 class FavoritesAdapter :
     ListAdapter<FavoritesModel, FavoritesAdapter.FavoritesViewHolder>(DiffCallback) {
 
-    lateinit var onItemClickListener: (FavoritesModel) -> Unit
+    lateinit var onItemClickListener: (FavoritesModel, Float) -> Unit
 
     companion object DiffCallback : DiffUtil.ItemCallback<FavoritesModel>() {
 
@@ -24,7 +24,8 @@ class FavoritesAdapter :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoritesViewHolder {
-        val mBinding = ItemFavoriteBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val mBinding =
+            ItemFavoriteBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return FavoritesViewHolder(mBinding)
     }
 
@@ -39,15 +40,12 @@ class FavoritesAdapter :
             mBinding.apply {
                 with(itemFavorites) {
                     txtTitle.text = nameBeer
-                    txtYeast.text = Yeast
-                    ratingBar.apply {
-                        numStars = 5
-                        stepSize = 1.5f
-                    }
-
-                    root.setOnClickListener {
+                    txtYeast.text = yeast
+                    ratingBar.rating = itemFavorites.rateFromLocal.toFloat()
+                    imageUrl = img
+                    btnSave.setOnClickListener {
                         if (::onItemClickListener.isInitialized) {
-                            onItemClickListener(this)
+                            onItemClickListener(this, ratingBar.rating)
                         }
                     }
                 }
